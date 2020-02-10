@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.laboratorio4.Models.TitleFragment"
+        android:label="@string/guatemala"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_touristicPlaces"
+            app:destination="@id/fragmentTouristicPlaces" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTouristicPlaces"
+        android:name="com.example.laboratorio4.Models.TouristicPlaces"
+        android:label="Lugares Turisticos"
+        tools:layout="@layout/fragment_touristic_places">
+        <action
+            android:id="@+id/action_TouristicPlaces_to_comment"
+            app:destination="@id/fragmentComment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutApp"
+        android:name="com.example.laboratorio4.Models.AboutApp"
+        android:label="Acerca de..."
+        tools:layout="@layout/fragment_about_app" />
+
+    <fragment
+        android:id="@+id/fragmentComment"
+        android:name="com.example.laboratorio4.Models.Comment"
+        android:label="Comentario"
+        tools:layout="@layout/fragment_comment" >
+        <action
+            android:id="@+id/action_fragmentComment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+
+</navigation>

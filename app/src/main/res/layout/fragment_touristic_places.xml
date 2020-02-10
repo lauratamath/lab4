@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentTouristicPlaces">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <data>
+        <variable
+            name = "placeInfo"
+            type = "String" />
+        <variable
+            name="placeName"
+            type="String" />
+        <variable
+            name="placePhrase"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="729dp"
+        android:padding="@dimen/padding_regular"
+        android:screenOrientation="portrait"
+        android:singleLine="true"
+        tools:context=".Models.TouristicPlaces">
+
+        <TextView
+            android:id="@+id/touristicName"
+            style="@style/TitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{placeName}"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <Button
+            android:id="@+id/submitComment"
+            style="@style/ButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/CommentButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.339"
+            app:layout_constraintStart_toEndOf="@+id/comment"
+            app:layout_constraintTop_toBottomOf="@+id/scrollViewInfo" />
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="241dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="24dp"
+            android:ems="10"
+            android:hint="@string/commentHint"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollViewInfo" />
+
+        <ScrollView
+            android:id="@+id/scrollViewInfo"
+            android:layout_width="363dp"
+            android:layout_height="444dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="100dp"
+            android:fillViewport="true"
+            android:gravity="center"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/touristicName"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="576dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="@dimen/padding_regular">
+
+                <TextView
+                    android:id="@+id/touristicPhrase"
+                    style="@style/SubtitleStyle"
+                    android:layout_width="106dp"
+                    android:layout_height="match_parent"
+                    android:text="@{placePhrase}"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault" />
+
+                <TextView
+                    android:id="@+id/gttouristicinfo"
+                    style="@style/TextStyle"
+                    android:layout_width="261dp"
+                    android:layout_height="576dp"
+                    android:text="@{placeInfo}"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
